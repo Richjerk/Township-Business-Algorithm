@@ -1,0 +1,49 @@
+<!-- BusinessProductManagement.svelte -->
+<script>
+  let products = []; // Populate this array with product/service data from your backend
+
+  // Function to add a new product or service
+  const addProduct = async () => {
+    // Implement logic to add a new product or service
+    // Send the product data to your backend for storage
+  };
+
+  // Function to edit an existing product or service
+  const editProduct = async (productId) => {
+    // Implement logic to edit the selected product or service
+    // Send the updated product data to your backend
+  };
+
+  // Function to delete an existing product or service
+  const deleteProduct = async (productId) => {
+    // Implement logic to delete the selected product or service
+    // Send a request to your backend to delete the product
+  };
+</script>
+
+<div>
+  <h2>Business Product/Service Management</h2>
+  <ul>
+    {#each products as product (product.id)}
+      <li>
+        <div>Name: {product.name}</div>
+        <div>Description: {product.description}</div>
+        <div>Price: ${product.price}</div>
+        <button on:click={() => editProduct(product.id)}>Edit</button>
+        <button on:click={() => deleteProduct(product.id)}>Delete</button>
+      </li>
+    {/each}
+  </ul>
+  
+  <h3>Add New Product/Service</h3>
+  <label for="productName">Name</label>
+  <input type="text" id="productName" bind:value={productName} />
+
+  <label for="productDescription">Description</label>
+  <input type="text" id="productDescription" bind:value={productDescription} />
+
+  <label for="productPrice">Price</label>
+  <input type="number" id="productPrice" bind:value={productPrice} />
+
+  <button on:click={addProduct}>Add Product/Service</button>
+</div>

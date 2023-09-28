@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Checkout</h1>
+    </div>
+    
+    <div class="checkout-container">
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <ul>
+                <li>
+                    <h3>Product/Service Name 1</h3>
+                    <p>Price: $19.99</p>
+                    <p>Quantity: 2</p>
+                </li>
+                <!-- Repeat similar list items for other products/services -->
+            </ul>
+            <p>Subtotal: $59.97</p>
+        </div>
+        
+        <!-- Shipping and Payment Section -->
+        <div class="shipping-payment">
+            <h2>Shipping and Payment</h2>
+            <form>
+                <label for="shipping-address">Shipping Address:</label>
+                <textarea id="shipping-address" name="shipping-address" rows="4" required></textarea>
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+                <button class="place-order-button">Place Order</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

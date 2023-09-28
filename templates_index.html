@@ -1,0 +1,180 @@
+<form>
+</div>
+<input id="user-input" autocomplete="off"/><button>Send</button>
+</form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+var socket = io();
+
+$('form').submit(function (e) {
+e.preventDefault();
+var message = $('#user-input').val();
+$('#messages').append($('<li'>text('You: '+message));
+socket.emit('user_message', { message: message});
+$('#User-input').val('');
+});
+
+socket.on('bot_response', function (data) {
+	var message = data.message;
+	var user_sid = data.user_sid;
+	$('#messages').append($('<li'>).text('Bot: ' + message));
+})
+;
+
+function sendMessageToBot(message) {
+axios.post('/graphql',  {
+query: 'township_chatbot'
+query {
+bot_response(message: "${message}")
+}
+
+
+}).then(respone => {
+	var botMessage = response.data.data.bot_response;
+	$('#message').append($('<li>').text('Bot:  + botMessage'));
+});
+}
+</script>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Township Small Business ChatBot</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f2f2f2; 
+}
+
+.container {
+max-width:n800px;
+margin: 0 auto;
+padding:20px;
+background-color: white;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+margin-top: 0;
+font-size: 32px;
+text-align: center;
+color: #333;
+}
+
+form {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center; 
+margin-top: 30px;
+}
+
+label { 
+display: block;
+width: 100%;
+margin-bottom 5px;
+font-size: 16px;
+color: #333;
+}
+
+input[type="text"] {
+width: 100%; 
+padding: 8px;
+border: 1px solid #ccc;
+border-radius: 3px;
+margin-bottom: 10px;
+font-size: 16px;
+color: 555;
+}
+
+select {
+width: 100%;
+padding: 8px;
+border: 1px solid #ccc;
+border-raduis: 3px;
+margin-bottom: 10px;
+font-size: 16px
+color: #555;
+}
+
+input[type="submit"] {
+background-color: #333;
+color: white;
+padding: 8px 16px;
+border: none;
+border-radius: 3px;
+font-size: 16px
+cursor: pointer;
+transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+background-color: #444; 
+}
+
+input[type="submit"]:hover {
+background-color: #444;
+}
+
+.response {
+margin-top: 30px;
+padding: 20 px;
+background-color: #2f2f2f;
+border-radius: 3px;
+font-size: #555;
+}
+</style> 
+
+<body>
+
+<div class="container">
+<h1>Township Small Business ChatBot</h1>
+<form action="/chatbot" method="post">
+<label for="input_text">Chat Bot:</label>
+<input type= "text" id="input_text" name="input_text" required>
+<label for="business_name">Business name:</label>
+<input type="text id="business_name" name="business_name" required>
+<label for="owner_name">Owner name:</label>
+<input type="text" id="owner-name" name="owner_name required>
+<label for="tax_id">Tax ID:</label>
+<input type="text" id="tax_id" name="tax-id" required
+<label for="business_type">Business type:</label>
+<select id="business_type" name="business_type" required>
+<option value="Retail">Retail</option>
+<option value="Service">Service</option>
+<option value="Manufacturing">Manufacturing</option
+</select>
+
+<div id="chat-box">
+<ul id="messages"></ul>
+</form>
+<form>
+<input id="user-input" autocomplete="off" /><button>Send</button>
+</form>
+
+</div>
+<script>
+var socket = io();
+
+$('form').submit(function (e) {
+e.preventDefault();
+var message = $('#user-input').val();
+$('#messages').append($'<li>').text('You: ' + message);
+socket.emit('user_message', {message: message});
+$('#user-input').val('');
+});
+
+socket.on('bot_response', function (data) {
+var user_sid = data_user_sid;
+$('#messages').append($('li>').text('Bot: ' = message));
+});
+</script>
+

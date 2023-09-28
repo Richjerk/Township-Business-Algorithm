@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Management</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Order Management</h1>
+    </div>
+    
+    <div class="order-list">
+        <!-- Display a list of orders that the business needs to manage -->
+        <div class="order-card">
+            <h2>Order ID: #12345</h2>
+            <p>Product/Service: Product/Service 1</p>
+            <p>Quantity: 2</p>
+            <p>Status: In Progress</p>
+            <button class="manage-button">Manage Order</button>
+        </div>
+        
+        <!-- Repeat similar order cards for other orders -->
+    </div>
+</body>
+</html>

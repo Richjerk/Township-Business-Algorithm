@@ -1,0 +1,17 @@
+<!-- BusinessRegistration.svelte -->
+<script>
+  let businessName = "";
+  let businessDescription = "";
+
+  const registerBusiness = async () => {
+    // Implement business registration logic here
+    // Send data to your backend for business registration
+  };
+</script>
+
+<div>
+  <h2>Business Registration</h2>
+  <input type="text" placeholder="Business Name" bind:value={businessName} />
+  <textarea placeholder="Business Description" bind:value={businessDescription}></textarea>
+  <button on:click={registerBusiness}>Register</button>
+</div>

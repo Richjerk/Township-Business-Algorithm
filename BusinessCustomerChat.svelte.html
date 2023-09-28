@@ -1,0 +1,60 @@
+<!-- BusinessCustomerChat.svelte -->
+<script>
+  let conversations = []; // Populate this array with chat conversations from your backend
+  let selectedConversation = null;
+
+  // Function to select a conversation
+  const selectConversation = (conversation) => {
+    selectedConversation = conversation;
+  };
+
+  // Function to send a message in the selected conversation
+  const sendMessage = async () => {
+    if (!selectedConversation || !selectedConversation.newMessage) return;
+
+    // Implement message sending logic here
+    // Send the message to your backend and update the conversation
+    const response = await fetch(`/api/conversations/${selectedConversation.id}/messages`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ text: selectedConversation.newMessage }),
+    });
+
+    if (response.ok) {
+      // Update the conversation with the new message
+      const data = await response.json();
+      selectedConversation.messages.push(data.message);
+      selectedConversation.newMessage = ''; // Clear the input field
+    } else {
+      console.error('Error sending message');
+    }
+  };
+</script>
+
+<div>
+  <h2>Business-Customer Chat</h2>
+  <div class="conversation-list">
+    {#each conversations as conversation (conversation.id)}
+      <div class="conversation" on:click={() => selectConversation(conversation)}>
+        <div>{conversation.customerName}</div>
+        <div>{conversation.lastMessage}</div>
+      </div>
+    {/each}
+  </div>
+  <div class="chat">
+    {#if selectedConversation}
+      <h3>Chat with {selectedConversation.customerName}</h3>
+      <div class="messages">
+        {#each selectedConversation.messages as message (message.id)}
+          <div class="{message.sender}">{message.text}</div>
+        {/each}
+      </div>
+      <input type="text" placeholder="Type your message" bind:value={selectedConversation.newMessage} />
+      <button on:click={sendMessage}>Send</button>
+    {:else}
+      <p>Select a conversation to start chatting</p>
+    {/if}
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Edit Profile</h1>
+    </div>
+    
+    <div class="profile-edit-form">
+        <!-- Profile Editing Form -->
+        <h2>Edit Your Profile</h2>
+        <form enctype="multipart/form-data">
+            <label for="profile-picture">Profile Picture:</label>
+            <input type="file" id="profile-picture" name="profile-picture">
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="JohnDoe123" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="john.doe@example.com" required>
+            
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,35 @@
+<!-- ChatInterface.svelte -->
+<script>
+  let userMessage = "";
+  let chatHistory = [];
+
+  const sendMessage = async () => {
+    // Send user message to your backend for processing and get a response
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message: userMessage }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      chatHistory = [...chatHistory, { text: userMessage, sender: 'user' }, { text: data.message, sender: 'bot' }];
+      userMessage = ""; // Clear the input field
+    } else {
+      console.error('Error sending message');
+    }
+  };
+</script>
+
+<div>
+  <h2>Chat Interface</h2>
+  <div class="chat-history">
+    {#each chatHistory as message, index}
+      <div class="{message.sender}">{message.text}</div>
+    {/each}
+  </div>
+  <input type="text" placeholder="Type your message" bind:value={userMessage} />
+  <button on:click={sendMessage}>Send</button>
+</div>

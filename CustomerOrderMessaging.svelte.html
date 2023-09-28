@@ -1,0 +1,45 @@
+<!-- CustomerOrderMessaging.svelte -->
+<script>
+  let selectedOrder = null; // Populate this object with the selected order from your backend
+  let newMessage = "";
+
+  // Function to send a message in the selected order conversation
+  const sendMessage = async () => {
+    if (!selectedOrder || !newMessage) return;
+
+    // Implement message sending logic here
+    // Send the message to your backend and update the conversation
+    const response = await fetch(`/api/orders/${selectedOrder.id}/messages`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ text: newMessage }),
+    });
+
+    if (response.ok) {
+      // Update the conversation with the new message
+      const data = await response.json();
+      selectedOrder.messages.push(data.message);
+      newMessage = ''; // Clear the input field
+    } else {
+      console.error('Error sending message');
+    }
+  };
+</script>
+
+<div>
+  <h2>Customer Order Messaging</h2>
+  {#if selectedOrder}
+    <h3>Order ID: {selectedOrder.id}</h3>
+    <div class="messages">
+      {#each selectedOrder.messages as message (message.id)}
+        <div class="{message.sender}">{message.text}</div>
+      {/each}
+    </div>
+    <input type="text" placeholder="Type your message" bind:value={newMessage} />
+    <button on:click={sendMessage}>Send</button>
+  {:else}
+    <p>Select an order to start a conversation</p>
+  {/if}
+</div>

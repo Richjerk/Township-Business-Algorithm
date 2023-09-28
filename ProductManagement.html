@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product/Service Management</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Product/Service Management</h1>
+    </div>
+    
+    <div class="product-list">
+        <!-- Display a list of products/services that the business manages -->
+        <div class="product-card">
+            <img src="product1.jpg" alt="Product 1">
+            <h2>Product/Service Name 1</h2>
+            <p>Description of Product/Service 1</p>
+            <button class="edit-button">Edit</button>
+            <button class="delete-button">Delete</button>
+        </div>
+        
+        <!-- Repeat similar product cards for other products/services -->
+    </div>
+    
+    <div class="add-product">
+        <h2>Add New Product/Service</h2>
+        <form>
+            <label for="product-name">Product/Service Name:</label>
+            <input type="text" id="product-name" name="product-name" required>
+            
+            <label for="product-description">Description:</label>
+            <textarea id="product-description" name="product-description" required></textarea>
+            
+            <button type="submit">Add Product/Service</button>
+        </form>
+    </div>
+</body>
+</html>

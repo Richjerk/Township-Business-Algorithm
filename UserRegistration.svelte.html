@@ -1,0 +1,19 @@
+<!-- UserRegistration.svelte -->
+<script>
+  let username = "";
+  let email = "";
+  let password = "";
+
+  const registerUser = async () => {
+    // Implement user registration logic here
+    // Send data to your backend for user registration
+  };
+</script>
+
+<div>
+  <h2>User Registration</h2>
+  <input type="text" placeholder="Username" bind:value={username} />
+  <input type="email" placeholder="Email" bind:value={email} />
+  <input type="password" placeholder="Password" bind:value={password} />
+  <button on:click={registerUser}>Register</button>
+</div>

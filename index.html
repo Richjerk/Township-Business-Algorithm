@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Township Business Registration</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Business Registration</h2>
+        <form action="/register" method="POST">
+            <label for="businessName">Business Name:</label>
+            <input type="text" id="businessName" name="businessName" required>
+            
+            <label for="location">Location (GPS Coordinates):</label>
+            <input type="text" id="location" name="location" required>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            
+            <label for="image">Upload Business Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>

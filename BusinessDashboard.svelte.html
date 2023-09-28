@@ -1,0 +1,19 @@
+<!-- BusinessDashboard.svelte -->
+<script>
+  let business = null; // Populate this object with business data from your backend
+</script>
+
+<div>
+  <h2>Business Dashboard</h2>
+  {#if business}
+    <div>
+      <h3>Welcome, {business.name}!</h3>
+      <div>Category: {business.category}</div>
+      <div>Address: {business.address}</div>
+      <!-- Display other business-related information -->
+    </div>
+    <!-- Add sections for displaying business's orders, messages, etc. -->
+  {:else}
+    <p>No business data available</p>
+  {/if}
+</div>

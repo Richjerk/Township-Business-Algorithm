@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Tracking</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Order Tracking</h1>
+    </div>
+    
+    <div class="order-tracking-container">
+        <!-- Order Tracking Section -->
+        <h2>Track Your Order</h2>
+        <p>Enter your order number to track your order:</p>
+        <form>
+            <input type="text" id="order-number" name="order-number" placeholder="Order Number" required>
+            <button type="submit">Track Order</button>
+        </form>
+        
+        <!-- Order Tracking Result -->
+        <div class="order-details">
+            <h3>Order Details</h3>
+            <p><strong>Order Number:</strong> #123456</p>
+            <p><strong>Date:</strong> September 15, 2023</p>
+            <p><strong>Total:</strong> R59.99</p>
+            
+            <h3>Order Status</h3>
+            <p><strong>Status:</strong> In Progress</p>
+            <p><strong>Estimated Delivery:</strong> September 20, 2023</p>
+            
+            <h3>Order Items</h3>
+            <ul class="order-items">
+                <li>
+                    <img src="product1.jpg" alt="Product 1">
+                    <h4>Product/Service Name 1</h4>
+                    <p>Price: R19.99</p>
+                    <p>Quantity: 2</p>
+                </li>
+                <!-- Repeat similar list items for other ordered products/services -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

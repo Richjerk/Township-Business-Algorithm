@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile Management</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>User Profile Management</h1>
+    </div>
+    
+    <div class="profile-management-container">
+        <!-- User Profile Information -->
+        <div class="profile-details">
+            <h2>Your Profile</h2>
+            <img src="profile.jpg" alt="User Profile Picture">
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Email:</strong> john.doe@example.com</p>
+            <p><strong>Location:</strong> New York, NY</p>
+            <button class="edit-button">Edit Profile</button>
+        </div>
+        
+        <!-- Change Password Section -->
+        <div class="change-password">
+            <h2>Change Password</h2>
+            <form>
+                <input type="password" id="current-password" name="current-password" placeholder="Current Password" required>
+                <input type="password" id="new-password" name="new-password" placeholder="New Password" required>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm New Password" required>
+                <button type="submit">Change Password</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

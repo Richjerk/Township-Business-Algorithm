@@ -1,0 +1,86 @@
+
+
+**32. Sample HTML/CSS for Business Profile Editing Page:**
+
+HTML (business_profile_edit.html):
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Business Profile</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Edit Business Profile</h1>
+    </div>
+    
+    <div class="business-profile-edit-form">
+        <!-- Business Profile Editing Form -->
+        <h2>Edit Your Business Profile</h2>
+        <form enctype="multipart/form-data">
+            <label for="business-logo">Business Logo:</label>
+            <input type="file" id="business-logo" name="business-logo">
+            
+            <label for="business-name">Business Name:</label>
+            <input type="text" id="business-name" name="business-name" value="ABC Store" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="contact@abcstore.com" required>
+            
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>
+```
+
+CSS (styles.css):
+```css
+/* Basic styling for the business profile editing page */
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.business-profile-edit-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.business-profile-edit-form h2 {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+```
+
+
+

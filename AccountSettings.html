@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Settings</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Account Settings</h1>
+    </div>
+    
+    <div class="account-details">
+        <!-- Display user account information -->
+        <h2>Account Information</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="JohnDoe123" disabled>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="john.doe@example.com" disabled>
+            
+            <button class="edit-button">Edit</button>
+        </form>
+    </div>
+    
+    <div class="change-password">
+        <!-- Allow users to change their password -->
+        <h2>Change Password</h2>
+        <form>
+            <label for="current-password">Current Password:</label>
+            <input type="password" id="current-password" name="current-password" required>
+            
+            <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" name="new-password" required>
+            
+            <label for="confirm-new-password">Confirm New Password:</label>
+            <input type="password" id="confirm-new-password" name="confirm-new-password" required>
+            
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>
+
+

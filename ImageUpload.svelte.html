@@ -1,0 +1,31 @@
+<!-- ImageUpload.svelte -->
+<script>
+  let selectedImage = null;
+
+  const handleImageUpload = async () => {
+    if (!selectedImage) return;
+
+    // Implement image upload logic here
+    // You can use a library like Axios or fetch to send the image to your backend
+    const formData = new FormData();
+    formData.append('image', selectedImage);
+
+    const response = await fetch('/api/upload', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (response.ok) {
+      console.log('Image uploaded successfully');
+      // You may want to update the UI to show the uploaded image
+    } else {
+      console.error('Error uploading image');
+    }
+  };
+</script>
+
+<div>
+  <h2>Image Upload</h2>
+  <input type="file" accept="image/*" on:change={(e) => (selectedImage = e.target.files[0])} />
+  <button on:click={handleImageUpload}>Upload Image</button>
+</div>

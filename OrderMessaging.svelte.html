@@ -1,0 +1,32 @@
+<!-- OrderMessaging.svelte -->
+<script>
+  let order = null; // The order object for which messaging is enabled
+  let message = "";
+  let orderMessages = []; // Store messages related to this order
+
+  // Function to send a message related to the order
+  const sendMessage = async () => {
+    // Implement message sending logic here
+    // Send the message to your backend along with the order ID
+  };
+</script>
+
+<div>
+  <h2>Order Messaging</h2>
+  {#if order}
+    <div>
+      <h3>Order ID: {order.id}</h3>
+      <div>{order.businessName}</div>
+      <div>Status: {order.status}</div>
+    </div>
+    <div class="order-messages">
+      {#each orderMessages as msg (msg.id)}
+        <div class="{msg.sender}">{msg.text}</div>
+      {/each}
+    </div>
+    <input type="text" placeholder="Type your message" bind:value={message} />
+    <button on:click={sendMessage}>Send Message</button>
+  {:else}
+    <p>Select an order to message about</p>
+  {/if}
+</div>

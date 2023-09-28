@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review and Rating</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Review and Rating</h1>
+    </div>
+    
+    <div class="review-container">
+        <!-- Business Information -->
+        <div class="business-info">
+            <h2>Business Information</h2>
+            <img src="business_logo.jpg" alt="Business Logo">
+            <h3>Business Name: ABC Electronics</h3>
+            <p>Email: info@abc-electronics.com</p>
+            <p>Location: Los Angeles, CA</p>
+        </div>
+        
+        <!-- Review and Rating Form -->
+        <div class="review-form">
+            <h2>Leave a Review</h2>
+            <form>
+                <textarea id="user-review" name="user-review" rows="4" placeholder="Write your review here" required></textarea>
+                <label for="user-rating">Rating:</label>
+                <select id="user-rating" name="user-rating" required>
+                    <option value="5">5 stars</option>
+                    <option value="4">4 stars</option>
+                    <option value="3">3 stars</option>
+                    <option value="2">2 stars</option>
+                    <option value="1">1 star</option>
+                </select>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

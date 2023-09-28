@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product/Service Management</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Product/Service Management</h1>
+    </div>
+    
+    <div class="management-container">
+        <!-- Product/Service List -->
+        <div class="product-list">
+            <h2>Your Products/Services</h2>
+            <ul>
+                <li>
+                    <img src="product1.jpg" alt="Product 1">
+                    <h3>Product/Service Name 1</h3>
+                    <p>Price: $19.99</p>
+                    <button class="edit-button">Edit</button>
+                    <button class="delete-button">Delete</button>
+                </li>
+                <!-- Repeat similar list items for other products/services -->
+            </ul>
+        </div>
+        
+        <!-- Add Product/Service Section -->
+        <div class="add-product">
+            <h2>Add Product/Service</h2>
+            <form>
+                <input type="text" id="product-name" name="product-name" placeholder="Product/Service Name" required>
+                <input type="text" id="product-price" name="product-price" placeholder="Price" required>
+                <input type="file" id="product-image" name="product-image" accept="image/*" required>
+                <button type="submit">Add Product/Service</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

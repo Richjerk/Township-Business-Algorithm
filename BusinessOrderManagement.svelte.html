@@ -1,0 +1,64 @@
+<!-- BusinessOrderManagement.svelte -->
+<script>
+  let orders = []; // Populate this array with order data from your backend
+  let selectedOrder = null;
+
+  // Function to select an order
+  const selectOrder = (order) => {
+    selectedOrder = order;
+  };
+
+  // Function to update the status of an order
+  const updateOrderStatus = async () => {
+    if (!selectedOrder || !selectedOrder.newStatus) return;
+
+    // Implement order status update logic here
+    // Send the updated status to your backend and update the order
+    const response = await fetch(`/api/orders/${selectedOrder.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ status: selectedOrder.newStatus }),
+    });
+
+    if (response.ok) {
+      // Update the order with the new status
+      const data = await response.json();
+      selectedOrder.status = data.status;
+      selectedOrder.newStatus = ''; // Clear the input field
+    } else {
+      console.error('Error updating order status');
+    }
+  };
+</script>
+
+<div>
+  <h2>Business Order Management</h2>
+  <div class="order-list">
+    {#each orders as order (order.id)}
+      <div class="order" on:click={() => selectOrder(order)}>
+        <div>Order ID: {order.id}</div>
+        <div>Customer: {order.customerName}</div>
+        <div>Status: {order.status}</div>
+      </div>
+    {/each}
+  </div>
+  <div class="order-details">
+    {#if selectedOrder}
+      <h3>Order Details</h3>
+      <div>
+        <div>Order ID: {selectedOrder.id}</div>
+        <div>Customer: {selectedOrder.customerName}</div>
+        <div>Status: {selectedOrder.status}</div>
+      </div>
+      <div>
+        <label for="newStatus">Update Status</label>
+        <input type="text" id="newStatus" bind:value={selectedOrder.newStatus} />
+        <button on:click={updateOrderStatus}>Update Status</button>
+      </div>
+    {:else}
+      <p>Select an order to view details and update status</p>
+    {/if}
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<!-- UserAuthentication.svelte -->
+<script>
+  let isLogin = true; // Whether the user is in login mode or registration mode
+  let username = "";
+  let email = "";
+  let password = "";
+
+  // Function to handle user registration or login
+  const handleAuthentication = async () => {
+    if (isLogin) {
+      // Implement login logic here
+      // Send login data (email and password) to your backend for validation
+    } else {
+      // Implement registration logic here
+      // Send registration data (username, email, and password) to your backend
+    }
+  };
+</script>
+
+<div>
+  <h2>{isLogin ? "Login" : "Register"}</h2>
+  <label for="username">Username</label>
+  <input type="text" id="username" bind:value={username} />
+
+  <label for="email">Email</label>
+  <input type="email" id="email" bind:value={email} />
+
+  <label for="password">Password</label>
+  <input type="password" id="password" bind:value={password} />
+
+  <button on:click={handleAuthentication}>{isLogin ? "Login" : "Register"}</button>
+  <p>{isLogin ? "Don't have an account?" : "Already have an account?"} <a on:click={() => (isLogin = !isLogin)}>{isLogin ? "Register" : "Login"}</a></p>
+</div>
+
+```html
+<!-- UserAuthentication.svelte -->
+<script>
+  let isLogin = true; // Whether the user is in login mode or registration mode
+  let username = "";
+  let email = "";
+  let password = "";
+
+  // Function to handle user registration or login
+  const handleAuthentication = async () => {
+    if (isLogin) {
+      // Implement login logic here
+      // Send login data (email and password) to your backend for validation
+    } else {
+      // Implement registration logic here
+      // Send registration data (username, email, and password) to your backend
+    }
+  };
+</script>
+
+<div>
+  <h2>{isLogin ? "User Login" : "User Registration"}</h2>
+  <label for="username">Username</label>
+  <input type="text" id="username" bind:value={username} />
+
+  <label for="email">Email</label>
+  <input type="email" id="email" bind:value={email} />
+
+  <label for="password">Password</label>
+  <input type="password" id="password" bind:value={password} />
+
+  <button on:click={handleAuthentication}>{isLogin ? "Login" : "Register"}</button>
+  <p>{isLogin ? "Don't have an account?" : "Already have an account?"} <a on:click={() => (isLogin = !isLogin)}>{isLogin ? "Register" : "Login"}</a></p>
+</div>
+```
+
+**62. Styling and Integration:**
+
+
+```html
+<!-- Navigation.svelte -->
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/product-listing">Product/Service Listing</a></li>
+    <li><a href="/order-history">Order History</a></li>
+    <li><a href="/user-profile">User Profile</a></li>
+    <li><a href="/user-dashboard">User Dashboard</a></li>
+    <li><a href="/business-profile">Business Profile</a></li>
+    <li><a href="/business-dashboard">Business Dashboard</a></li>
+    <li><a href="/order-messaging">Order Messaging</a></li>
+    <li><a href="/business-products">Business Products/Services</a></li>
+    <li><a href="/user-authentication">User Authentication</a></li>
+    <li><a href="/business-authentication">Business Authentication</a></li>
+  </ul>
+</nav>
+```
+

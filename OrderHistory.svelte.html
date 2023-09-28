@@ -1,0 +1,26 @@
+<!-- OrderHistory.svelte -->
+<script>
+  let orders = []; // Populate this array with user's order history from your backend
+</script>
+
+<div>
+  <h2>Order History</h2>
+  <ul>
+    {#each orders as order (order.id)}
+      <li>
+        <div>Order ID: {order.id}</div>
+        <div>Business: {order.businessName}</div>
+        <div>Status: {order.status}</div>
+        <button on:click={() => viewOrderMessages(order)}>View Messages</button>
+      </li>
+    {/each}
+  </ul>
+</div>
+
+<script>
+  // Function to view messages related to a specific order
+  function viewOrderMessages(order) {
+    // Implement logic to display messages for the selected order
+    // You can update the state to show the OrderMessaging component with the selected order
+  }
+</script>

@@ -1,0 +1,21 @@
+<!-- ChatInterface.svelte -->
+<script>
+  let userMessage = "";
+  let chatHistory = [];
+
+  const sendMessage = async () => {
+    // Implement chat message sending logic here
+    // Send userMessage to your backend, get a response, and update chatHistory
+  };
+</script>
+
+<div>
+  <h2>Chat Interface</h2>
+  <div class="chat-history">
+    {#each chatHistory as message}
+      <div>{message}</div>
+    {/each}
+  </div>
+  <input type="text" placeholder="Type your message" bind:value={userMessage} />
+  <button on:click={sendMessage}>Send</button>
+</div>

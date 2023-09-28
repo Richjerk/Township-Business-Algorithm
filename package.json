@@ -1,0 +1,22 @@
+{
+	"name": "township_chatbot",
+	"version.: "1.0.0", 
+	"description": "Small business ChatBot for township entrepreneurs both formal and informal.",
+	"main": "index.js",   // Entry point of your application
+	"scripts": "node index.js", // Define the script to start your application
+	"test": "echo \"Error: no test specified\" && exit 1"  //Placeholder test script
+},
+"author": "Your Name",
+"license": "MIT",
+"dependencies": {
+	// Define your project dependencies here
+	// For example, you can use:
+	// "express": "^4.17.1" for Express.js,
+	// "lodash": "^4.17.21" for Lodash etc.
+},
+"devDependencies":{
+	// Define development dependencies (for build tools, testin, etc.) here
+	// For example, you can use:
+	// "nodemo": "^2.0.12" for nodemon, etc.
+}
+}

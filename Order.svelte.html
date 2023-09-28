@@ -1,0 +1,35 @@
+<!-- Order.svelte -->
+<script>
+  import { onMount } from 'svelte';
+
+  let product = null; // Product object selected by the user
+  let quantity = 1; // Default quantity
+
+  // Function to place an order
+  const placeOrder = async () => {
+    // Implement order placement logic here
+    // Send the order details to your backend
+  };
+
+  // You can use the onMount lifecycle hook to perform actions when the component mounts
+  onMount(() => {
+    if (!product) {
+      // Redirect or handle this case appropriately
+    }
+  });
+</script>
+
+<div>
+  <h2>Place an Order</h2>
+  {#if product}
+    <div>
+      <h3>{product.name}</h3>
+      <div>{product.description}</div>
+      <div>${product.price}</div>
+    </div>
+    <input type="number" min="1" bind:value={quantity} />
+    <button on:click={placeOrder}>Place Order</button>
+  {:else}
+    <p>Select a product to order</p>
+  {/if}
+</div>

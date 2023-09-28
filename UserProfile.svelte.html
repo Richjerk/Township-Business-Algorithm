@@ -1,0 +1,24 @@
+<!-- UserProfile.svelte -->
+<script>
+  let user = null; // Populate this object with user data from your backend
+
+  // Function to update user profile
+  const updateUserProfile = async () => {
+    // Implement profile update logic here
+    // Send the updated profile data to your backend
+  };
+</script>
+
+<div>
+  <h2>User Profile</h2>
+  {#if user}
+    <div>
+      <div>Name: {user.name}</div>
+      <div>Email: {user.email}</div>
+      <div>Phone: {user.phone}</div>
+      <button on:click={updateUserProfile}>Edit Profile</button>
+    </div>
+  {:else}
+    <p>No user data available</p>
+  {/if}
+</div>

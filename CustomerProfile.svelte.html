@@ -1,0 +1,24 @@
+<!-- CustomerProfile.svelte -->
+<script>
+  let customer = null; // Populate this object with customer data from your backend
+
+  // Function to update customer profile
+  const updateCustomerProfile = async () => {
+    // Implement profile update logic here
+    // Send the updated profile data to your backend
+  };
+</script>
+
+<div>
+  <h2>Customer Profile</h2>
+  {#if customer}
+    <div>
+      <div>Name: {customer.name}</div>
+      <div>Email: {customer.email}</div>
+      <div>Phone: {customer.phone}</div>
+      <button on:click={updateCustomerProfile}>Edit Profile</button>
+    </div>
+  {:else}
+    <p>No customer data available</p>
+  {/if}
+</div>

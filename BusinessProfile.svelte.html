@@ -1,0 +1,24 @@
+<!-- BusinessProfile.svelte -->
+<script>
+  let business = null; // Populate this object with business data from your backend
+
+  // Function to update business profile
+  const updateBusinessProfile = async () => {
+    // Implement profile update logic here
+    // Send the updated profile data to your backend
+  };
+</script>
+
+<div>
+  <h2>Business Profile</h2>
+  {#if business}
+    <div>
+      <div>Name: {business.name}</div>
+      <div>Category: {business.category}</div>
+      <div>Address: {business.address}</div>
+      <button on:click={updateBusinessProfile}>Edit Profile</button>
+    </div>
+  {:else}
+    <p>No business data available</p>
+  {/if}
+</div>

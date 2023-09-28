@@ -1,0 +1,18 @@
+<!-- CustomerDashboard.svelte -->
+<script>
+  let customer = null; // Populate this object with customer data from your backend
+</script>
+
+<div>
+  <h2>Customer Dashboard</h2>
+  {#if customer}
+    <div>
+      <h3>Welcome, {customer.name}!</h3>
+      <div>Email: {customer.email}</div>
+      <!-- Display other customer-related information -->
+    </div>
+    <!-- Add sections for displaying customer's orders, messages, etc. -->
+  {:else}
+    <p>No customer data available</p>
+  {/if}
+</div>

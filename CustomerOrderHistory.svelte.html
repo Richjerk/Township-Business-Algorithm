@@ -1,0 +1,36 @@
+<!-- CustomerOrderHistory.svelte -->
+<script>
+  let orders = []; // Populate this array with customer's order history from your backend
+  let selectedOrder = null;
+
+  // Function to select an order and view details
+  const selectOrder = (order) => {
+    selectedOrder = order;
+  };
+</script>
+
+<div>
+  <h2>Customer Order History</h2>
+  <ul>
+    {#each orders as order (order.id)}
+      <li>
+        <div>Order ID: {order.id}</div>
+        <div>Business: {order.businessName}</div>
+        <div>Status: {order.status}</div>
+        <button on:click={() => selectOrder(order)}>View Details</button>
+      </li>
+    {/each}
+  </ul>
+
+  {#if selectedOrder}
+    <div>
+      <h3>Order Details</h3>
+      <div>Order ID: {selectedOrder.id}</div>
+      <div>Business: {selectedOrder.businessName}</div>
+      <div>Status: {selectedOrder.status}</div>
+      <!-- Display more order details as needed -->
+    </div>
+  {:else}
+    <p>Select an order to view details</p>
+  {/if}
+</div>

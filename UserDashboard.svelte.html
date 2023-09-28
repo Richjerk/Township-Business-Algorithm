@@ -1,0 +1,18 @@
+<!-- UserDashboard.svelte -->
+<script>
+  let user = null; // Populate this object with user data from your backend
+</script>
+
+<div>
+  <h2>User Dashboard</h2>
+  {#if user}
+    <div>
+      <h3>Welcome, {user.name}!</h3>
+      <div>Email: {user.email}</div>
+      <!-- Display other user-related information -->
+    </div>
+    <!-- Add sections for displaying user's orders, messages, etc. -->
+  {:else}
+    <p>No user data available</p>
+  {/if}
+</div>

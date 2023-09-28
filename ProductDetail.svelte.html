@@ -1,0 +1,18 @@
+<!-- ProductDetail.svelte -->
+<script>
+  let product = null; // Populate this object with product/service data from your backend
+</script>
+
+<div>
+  <h2>Product/Service Detail</h2>
+  {#if product}
+    <div>
+      <h3>{product.name}</h3>
+      <div>{product.description}</div>
+      <div>${product.price}</div>
+      <button on:click={() => orderProduct(product)}>Order</button>
+    </div>
+  {:else}
+    <p>No product/service data available</p>
+  {/if}
+</div>

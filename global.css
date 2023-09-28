@@ -1,0 +1,28 @@
+/* global.css */
+/* Define global styles for your application */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Define styles for navigation */
+nav {
+  background-color: #333;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Add more styles as needed */

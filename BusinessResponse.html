@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Response</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Respond to Order</h1>
+    </div>
+    
+    <div class="order-details">
+        <h2>Order Details</h2>
+        <p>Order ID: #12345</p>
+        <p>Product/Service: Product/Service 1</p>
+        <p>Quantity: 2</p>
+        <p>Delivery Location: GPS Coordinates</p>
+    </div>
+    
+    <div class="response-form">
+        <form>
+            <label for="response">Response to Customer:</label>
+            <textarea id="response" name="response" required></textarea>
+            
+            <label for="delivery-status">Delivery Status:</label>
+            <select id="delivery-status" name="delivery-status" required>
+                <option value="in-progress">In Progress</option>
+                <option value="delivered">Delivered</option>
+                <!-- Add more delivery status options -->
+            </select>
+            
+            <button type="submit">Submit Response</button>
+        </form>
+    </div>
+</body>
+</html>

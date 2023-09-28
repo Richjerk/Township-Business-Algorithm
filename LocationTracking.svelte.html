@@ -1,0 +1,46 @@
+<!-- LocationTracking.svelte -->
+<script>
+  let userLocation = null; // Store user's GPS location here
+  let businessLocations = []; // Populate this array with business locations from your backend
+
+  // Initialize the Mapbox map with user and business locations
+  // Implement Mapbox map initialization here
+
+  // Update user location when available
+  navigator.geolocation.getCurrentPosition((position) => {
+    userLocation = {
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude,
+    };
+
+    // Center the map on the user's location
+    // Implement Mapbox map centering logic here
+  });
+</script>
+
+<div>
+  <h2>GPS Location Tracking</h2>
+  <div id="map-container">
+    <!-- Render the Mapbox map here -->
+  </div>
+  <div>
+    <h3>Nearby Businesses</h3>
+    <ul>
+      {#each businessLocations as business (business.id)}
+        <li>
+          <div>{business.name}</div>
+          <div>{business.address}</div>
+          <!-- Display distance between user and business based on GPS coordinates -->
+          <div>{calculateDistance(userLocation, business.location)} meters away</div>
+        </li>
+      {/each}
+    </ul>
+  </div>
+</div>
+
+<script>
+  // Function to calculate the distance between two GPS coordinates
+  function calculateDistance(userLocation, businessLocation) {
+    // Implement distance calculation logic here
+  }
+</script>
